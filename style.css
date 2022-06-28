@@ -1,0 +1,593 @@
+/* Start Normalization */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Netflix Sans', sans-serif;
+    background-color: var(--black);
+    /* height: 10000vh; */
+}
+
+
+/* End Normalization */
+
+
+/* Start Variables */
+
+:root {
+    --red: #e50914;
+    --white: #fff;
+    --grey-placeholder: #8c8c9b;
+    --black: #000000;
+    --hovered-red: #f40612;
+    --hr-bg: #222222;
+    --freq-ask-bg: #303030;
+    --footer-txt-clr: #757575;
+    --hr-prop: 8px solid var(--hr-bg);
+    --download-txt-clr: #0071dc;
+}
+
+
+/* End Variables */
+
+
+/* Start Global Attributes */
+
+@font-face {
+    font-family: "Netflix Sans";
+    src: url('fonts/NetflixSansRegular.ttf');
+}
+
+.d-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+/* End Global Attributes */
+
+
+/* Start Designs */
+
+
+/* Start header */
+
+header {
+    background-image: url("imgs/EG-en-20220620-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    height: 79vh;
+    background-position: center;
+    background-size: cover;
+    border-bottom: var(--hr-prop);
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    color: var(--white);
+    z-index: 1;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .8) 100%);
+    ;
+    z-index: -3;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 60px;
+    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+header nav .right-nav-cont {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+header nav .right-nav-cont a {
+    color: var(--white);
+}
+
+header nav .right-nav-cont .btn.red-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--red);
+    border-radius: 5px;
+}
+
+header nav .right-nav-cont .btn.red-btn:hover {
+    background-color: var(--hovered-red);
+    transition: background-color 0.1s;
+}
+
+header nav .right-nav-cont .language {
+    border: 1px solid var(--white);
+    border-radius: 3px;
+    padding: 0.5rem 0.7rem;
+    background-color: rgba(0, 0, 0, 0.445);
+}
+
+header nav .right-nav-cont .language i:not(.fa-caret-down) {
+    margin-right: 5px;
+}
+
+header nav .right-nav-cont .language i.fa-caret-down {
+    margin-left: 5px;
+}
+
+header .header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+header .header-wrapper h1 {
+    font-size: 64px;
+    max-width: 800px;
+}
+
+header .header-wrapper h3 {
+    margin: 30px 0;
+    font-size: 26px;
+}
+
+header .header-wrapper form p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+header .header-wrapper form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+header .header-wrapper form .d-flex-row {
+    justify-content: space-between;
+}
+
+header .header-wrapper form .d-flex-row #email:focus {
+    outline: 1px solid blue;
+}
+
+header .header-wrapper form .d-flex-row #email {
+    flex-grow: 2;
+    width: 500px;
+    height: 70px;
+    border: none;
+    outline: none;
+    font-family: "Netflix Sans", sans-serif;
+    padding-left: 20px;
+}
+
+header .header-wrapper label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(50%);
+    z-index: 1;
+    color: var(--black);
+    font-size: 1.2rem;
+    padding-left: 20px;
+    transition: all 0.1s;
+}
+
+input#email:focus+label {
+    top: 30px;
+    font-size: 1rem;
+}
+
+header .header-wrapper form .d-flex-row input[type="submit"] {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    background-color: var(--red);
+    font-weight: 800;
+    color: var(--white);
+    padding-inline: 2rem;
+    font-family: "Netflix Sans";
+    font-size: 30px;
+}
+
+header .header-wrapper form .d-flex-row input[type="submit"]:hover {
+    background-color: var(--hovered-red);
+}
+
+
+/* End Header */
+
+
+/* Start Enjoy Service */
+
+section.enjoy {
+    border-bottom: var(--hr-prop);
+}
+
+section.enjoy .container {
+    max-width: 1100px;
+    display: flex;
+    margin-inline: auto;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+section.enjoy .container>div {
+    width: calc(100% / 2);
+}
+
+section.enjoy .container h2 {
+    font-size: 60px;
+}
+
+section.enjoy .container p {
+    font-size: 26px;
+}
+
+section.enjoy .container .video-trick {
+    position: relative;
+}
+
+section.enjoy .container .video-trick video {
+    position: absolute;
+    top: 96px;
+    right: -2px;
+    z-index: -1;
+    width: 86%;
+}
+
+
+/* End Enjoy Service */
+
+
+/* Start Download */
+
+section.download {
+    border-bottom: var(--hr-prop);
+}
+
+section.download .container {
+    max-width: 1100px;
+    display: flex;
+    margin-inline: auto;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+section.download .container>div {
+    width: calc(100% / 2);
+}
+
+section.download .container h2 {
+    font-size: 50px;
+}
+
+section.download .container p {
+    font-size: 26px;
+}
+
+section.download .container .photo-trick {
+    position: relative;
+}
+
+section.download .container .photo-trick img:not(.img-wrapper img) {
+    position: relative;
+    right: 150px;
+    height: 378px;
+    max-width: 100%;
+}
+
+section.download .container .download-trick {
+    display: flex;
+    border: 2px solid var(--hr-bg);
+    border-radius: 0.75rem;
+    width: 330px;
+    height: 105px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 130px;
+    right: 64px;
+    background-color: var(--black);
+    box-shadow: 0px 15px 10px -15px var(--black);
+}
+
+section.download .container .download-trick img:first-of-type {
+    max-width: 100%;
+    width: 58px;
+    height: 80px;
+    margin-left: 20px;
+}
+
+section.download .container .download-trick p:first-of-type {
+    font-size: 18px;
+}
+
+section.download .container .download-trick p:last-of-type {
+    font-size: 18px;
+    color: var(--download-txt-clr);
+}
+
+section.download .container .download-trick img:last-of-type {
+    max-width: 100%;
+    width: 48px;
+    height: 60px;
+}
+
+
+/* End Download */
+
+
+/* Start Watch Everywhere Service */
+
+section.watch-everywhere {
+    border-bottom: var(--hr-prop);
+}
+
+section.watch-everywhere .container {
+    max-width: 1100px;
+    display: flex;
+    margin-inline: auto;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+section.watch-everywhere .container>div {
+    width: calc(100% / 2);
+}
+
+section.watch-everywhere .container h2 {
+    font-size: 60px;
+}
+
+section.watch-everywhere .container p {
+    font-size: 26px;
+}
+
+section.watch-everywhere .container .video-trick {
+    position: relative;
+}
+
+section.watch-everywhere .container .video-trick video {
+    position: absolute;
+    top: 53px;
+    right: 28px;
+    z-index: -1;
+    width: 73%;
+}
+
+
+/* End Watch Everywhere Service */
+
+
+/* Start Kids Area */
+
+section.kids-area {
+    border-bottom: var(--hr-prop);
+}
+
+section.kids-area .container {
+    max-width: 1100px;
+    display: flex;
+    margin-inline: auto;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    gap: 70px;
+}
+
+section.kids-area .container>div {
+    width: calc(100% / 2);
+}
+
+section.kids-area .container h2 {
+    font-size: 50px;
+}
+
+section.kids-area .container p {
+    font-size: 26px;
+}
+
+
+/* End Kids Area */
+
+
+/* Start Freq Asked */
+
+section.freq-asked .container {
+    margin-inline: auto;
+    max-width: 815px;
+}
+
+section.freq-asked {
+    border-bottom: var(--hr-prop);
+}
+
+section.freq-asked h1 {
+    color: var(--white);
+    text-align: center;
+    font-size: 3rem;
+    margin: 50px auto;
+}
+
+section.freq-asked .freq-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1.8rem;
+    color: var(--white);
+    background-color: var(--freq-ask-bg);
+    align-items: center;
+    margin: 10px;
+}
+
+section.freq-asked .freq-wrapper i {
+    font-size: 2rem;
+}
+
+section.freq-asked .basic-drop-down {
+    display: none;
+    justify-content: space-between;
+    padding: 1.5rem 1.8rem;
+    color: var(--white);
+    background-color: var(--freq-ask-bg);
+    align-items: center;
+    margin: 10px;
+    margin-top: -8px;
+    font-size: 1.5rem;
+}
+
+section.freq-asked .freq-wrapper:hover+.basic-drop-down {
+    display: flex;
+    transition: 3s;
+}
+
+section.freq-asked form p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--white);
+    text-align: center;
+}
+
+section.freq-asked form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+section.freq-asked form .d-flex-row {
+    justify-content: space-between;
+}
+
+section.freq-asked form .d-flex-row #email:focus {
+    outline: 1px solid blue;
+}
+
+section.freq-asked form .d-flex-row #email {
+    flex-grow: 2;
+    width: 500px;
+    height: 70px;
+    border: none;
+    outline: none;
+    font-family: "Netflix Sans", sans-serif;
+    padding-left: 20px;
+}
+
+section.freq-asked label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(50%);
+    z-index: 1;
+    color: var(--black);
+    font-size: 1.2rem;
+    padding-left: 20px;
+    transition: all 0.1s;
+}
+
+section.freq-asked form .d-flex-row input[type="submit"] {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    background-color: var(--red);
+    font-weight: 800;
+    color: var(--white);
+    padding-inline: 2rem;
+    font-family: "Netflix Sans";
+    font-size: 30px;
+}
+
+section.freq-asked form .d-flex-row input[type="submit"]:hover {
+    background-color: var(--hovered-red);
+}
+
+
+/* End Freq Asked */
+
+
+/* Start Footer */
+
+footer,
+footer a {
+    color: var(--footer-txt-clr);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .container {
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
+footer .container p:first-of-type {
+    margin-top: 40px;
+}
+
+footer .footer-list-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-list-wrapper ul {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+}
+
+footer .footer-list-wrapper ul li a {
+    font-size: 14px;
+}
+
+footer .language {
+    border: 1px solid var(--footer-txt-clr);
+    border-radius: 3px;
+    padding: 0.8rem 1.2rem;
+}
+
+footer .language i:first-of-type {
+    margin-right: 10px;
+}
+
+footer .language i:last-of-type {
+    margin-left: 10px;
+}
+
+footer .container .copy {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/* End Footer */
+
+
+/* End Designs */
